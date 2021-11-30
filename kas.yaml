@@ -1,0 +1,44 @@
+header:
+  version: 1
+machine: qemuarm
+distro: automate-home
+repos:
+  meta-homino:
+  poky:
+    url: "https://git.yoctoproject.org/git/poky"
+    refspec: dunfell
+    layers:
+      meta:
+      meta-poky:
+  meta-openembedded:
+    url: "https://git.openembedded.org/meta-openembedded"
+    refspec: dunfell
+    layers:
+      meta-python:
+      meta-filesystems:
+      meta-multimedia:
+      meta-networking:
+      meta-oe:
+      meta-webserver:
+bblayers_conf_header:
+  meta-custom: |
+    POKY_BBLAYERS_CONF_VERSION = "1"
+    BBPATH = "${TOPDIR}"
+    BBFILES ?= ""
+local_conf_header:
+  meta-custom: |
+    PATCHRESOLVE = "noop"
+    CONF_VERSION = "1"
+    PACKAGE_CLASSES = "package_ipk"
+    INHERIT += "rm_work"
+    INHERIT += "buildhistory"
+    BUILDHISTORY_COMMIT = "1"
+    DEFAULT_TIMEZONE = "Europe/Rome"
+    SMART_HOME_LOCALE = "it_IT.UTF-8"
+    PROJECT_DIR = "/etc/automate-home"
+    KNX_DAEMON_ARGS = "'--dev-hidraw=/dev/hidraw0'"
+    BRAIN_DAEMON_ARGS = "'--configuration-file=/etc/automate-home/configuration.ini'"
+    WEBSERVER_DAEMON_ARGS = "'--configuration-file=/etc/automate-home/configuration.ini'"
+    GRAPHITE_FEEDER_DAEMON_ARGS = "'--configuration-file=/etc/automate-home/configuration.ini'"
+    IMAGE_FSTYPES = "tar.xz"    
+target: complete-node

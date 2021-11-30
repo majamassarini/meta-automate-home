@@ -1,0 +1,14 @@
+--- setup.cfg	2020-10-29 21:27:52.007522800 +0000
++++ setup.cfg.new	2021-02-23 12:35:04.191549243 +0000
+@@ -36,11 +36,7 @@
+ [options]
+ packages = find:
+ setup_requires = 
+-	cffi >= 1.1.0
+-	pytest-runner
+-	setuptools
+ install_requires = 
+-	cffi >= 1.1.0
+ tests_require = 
+ 	pytest-cov
+ 	pytest-flake8

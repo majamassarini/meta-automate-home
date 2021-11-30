@@ -1,0 +1,20 @@
+
+### Shell environment set up for builds. ###
+
+You can now run 'bitbake <target>'
+
+Common targets are:
+    complete-node (build everything, daemon processes + core process + redis process + webserver process + graphite app)
+    complete-node-dev
+    complete-node-no-daemons (build everything except daemons: core process + redis process + webserver process + graphite app)
+    complete-node-no-daemons-dev
+    daemon-node (build a node with just daemon processes, hardware dependent)
+    daemon-node-dev
+    brain-node (build a node with the main core process (the home process) and a redis instance)
+    brain-node-dev
+    webserver-node (build a node with the webserver process (the ws process))
+    webserver-node-dev
+
+Using qemu
+    runqemu tmp/deploy/images/qemux86-64/complete-node-qemux86-64.qemuboot.conf nographic
+    runqemu slirp nographic

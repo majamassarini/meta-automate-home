@@ -1,0 +1,15 @@
+--- setup.py	2020-05-01 17:18:19.504502148 +0000
++++ setup.py	2020-05-01 18:18:59.658202398 +0000
+@@ -11,9 +11,8 @@
+   return module.__version__
+ 
+ ext = Extension("hiredis.hiredis",
+-  sources=sorted(glob.glob("src/*.c") +
+-                 ["vendor/hiredis/%s.c" % src for src in ("read", "sds")]),
+-  include_dirs=["vendor"])
++  sources=sorted(glob.glob("src/*.c")),
++  libraries=["hiredis"])
+ 
+ setup(
+   name="hiredis",
+

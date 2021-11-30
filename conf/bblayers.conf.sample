@@ -1,0 +1,21 @@
+CONF_VERSION = "1"
+
+BBPATH = "${TOPDIR}"
+BBFILES ?= ""
+METADIR := "${@os.path.abspath(os.path.dirname(d.getVar('FILE')) + '/../..')}"
+
+BBLAYERS ?= " \
+    ##OEROOT##/meta \
+    ##OEROOT##/meta-poky \
+    ${METADIR}/meta-openembedded/meta-python \
+    ${METADIR}/meta-openembedded/meta-filesystems \
+    ${METADIR}/meta-openembedded/meta-multimedia \
+    ${METADIR}/meta-openembedded/meta-networking \
+    ${METADIR}/meta-openembedded/meta-oe \
+    ${METADIR}/meta-openembedded/meta-webserver \
+    ${METADIR}/meta-automate-home \
+"
+
+BBLAYERS_NON_REMOVABLE ?= " \
+    ##OEROOT##/meta \
+"

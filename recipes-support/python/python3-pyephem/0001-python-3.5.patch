@@ -1,0 +1,19 @@
+diff -Naur ephem-3.7.6.0.a/PKG-INFO ephem-3.7.6.0.b/PKG-INFO
+--- ephem-3.7.6.0.a/PKG-INFO	2015-08-19 08:55:47.000000000 +0200
++++ ephem-3.7.6.0.b/PKG-INFO	2018-06-21 13:22:26.904639343 +0200
+@@ -116,3 +116,4 @@
+ Classifier: Programming Language :: Python :: 3.2
+ Classifier: Programming Language :: Python :: 3.3
+ Classifier: Programming Language :: Python :: 3.4
++Classifier: Programming Language :: Python :: 3.5
+diff -Naur ephem-3.7.6.0.a/setup.py ephem-3.7.6.0.b/setup.py
+--- ephem-3.7.6.0.a/setup.py	2015-08-19 06:43:55.000000000 +0200
++++ ephem-3.7.6.0.b/setup.py	2018-06-21 10:09:22.683582900 +0200
+@@ -48,6 +48,7 @@
+         'Programming Language :: Python :: 3.2',
+         'Programming Language :: Python :: 3.3',
+         'Programming Language :: Python :: 3.4',
++        'Programming Language :: Python :: 3.5',
+         ],
+       packages = [ 'ephem', 'ephem.tests' ],
+       package_data = { 'ephem': ['doc/*.rst',
