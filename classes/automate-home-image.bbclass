@@ -76,12 +76,19 @@ populate_issue_file() {
 
 populate_entrypoint_file() {
 echo "/etc/init.d/redis-server start \
+& sleep 1 \
 & /etc/init.d/mosquitto start \
+& sleep 1 \
 & /etc/init.d/graphite-carbon.sh start \
+& sleep 1 \
 & /etc/init.d/graphite-web.sh start \
+& sleep 1 \
 & /etc/init.d/nginx start \
+& sleep 1 \
 & /etc/init.d/brain.sh start \
+& sleep 1 \
 & /etc/init.d/brain-ws.sh start \
+& sleep 1 \
 & /etc/init.d/graphite-feeder.sh start \
 & /bin/sh;" > ${IMAGE_ROOTFS}/usr/bin/entrypoint
 chmod 755 ${IMAGE_ROOTFS}/usr/bin/entrypoint
